@@ -1,20 +1,10 @@
 text = input("Введите текст: ")
 step = int(input("Введите сдвиг: "))
 alphabet = "абвгдеёжзийклмнопрстуфхцчшщъыьэюя"
-counter = 0
-pos = None
 secret_messege = ""
-for letter in text:
-    for letter_alphabet in alphabet:
-        counter += 1
-        if letter == letter_alphabet:
-            pos = counter
-            if pos + step > 33:
-                pos = (pos - 33)
-            secret_messege += alphabet[pos-1+step]
-        elif letter == " ":
-            secret_messege += " "
-            letter = ""
 
-    counter = 0
+char_list = ((alphabet[(alphabet.index(sym) + step) % 33] if sym != " " else " ") for sym in text)
+for char in char_list:
+    secret_messege += char
+
 print("Зашифрованный текст:", secret_messege)
