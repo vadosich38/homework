@@ -6,9 +6,9 @@ some_dict = {"key1": "A", "key2": "B", 2: "A", 3: "B", 4: "A", 5: "B", 6: "A", 7
 def crypt(text):
     new_list = list()
     if isinstance(text, dict):
-        for index, key in enumerate(text.keys()):
+        for index, key in text.items():
             if index % 2 == 0:
-                temp = str(key) + ":" + some_dict[key]
+                temp = str(index) + ":" + str(key)
                 new_list.append(temp)
     else:
         for index, value in enumerate(text):
