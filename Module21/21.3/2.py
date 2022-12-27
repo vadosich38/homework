@@ -5,7 +5,7 @@ if data.isdigit():
 elif data.startswith("(") and data.endswith(")"):
     print("Тип данных: tuple(кортеж)\nНеизменяемый (immutable)\nId объекта: {0}".format(id(data)))
 elif data.startswith("{") and data.endswith("}"):
-    print("Тип данных: dict(словарь)\nНеизменяемый (immutable)\nId объекта: {0}".format(id(data)))
+    print("Тип данных: dict(словарь)\nИзменяемый (mutable)\nId объекта: {0}".format(id(data)))
 elif data.startswith("[") and data.endswith("]"):
     print("Тип данных: list(список)\nИзменяемый (mutable)\nId объекта: {0}".format(id(data)))
 else:
