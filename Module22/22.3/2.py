@@ -7,6 +7,7 @@ def my_open(num, list):
     file = open(list[num-1], "r")
     for string in file:
         print(string, end="")
+    file.close()
 def search_file(directory, file, dir_list=[]):
     print("Переходим в", directory)
 

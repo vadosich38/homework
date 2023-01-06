@@ -6,6 +6,7 @@ diff = 0
 
 file = open(os.path.abspath(os.path.join("..", "..", "..", "..", "..", "Documents", "task", "group_1.txt")),
                                                                                     "r", encoding="utf-8")
+file.close()
 for i_line in file:
     info = i_line.split()
     list1.append(int(info[2]))
@@ -16,6 +17,7 @@ for i_line in file:
 
 file_2 = open(os.path.abspath(os.path.join("..", "..", "..", "..", "..", "Documents", "task", "group_2.txt")),
                                                                                     "r", encoding="utf-8")
+file_2.close()
 for i_line in file_2:
     info = i_line.split()
     list2.append(int(info[2]))
