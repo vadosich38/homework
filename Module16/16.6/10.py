@@ -1,12 +1,12 @@
+nums = []
+new_nums = []
+answer = []
 def is_polindrome(num_list):
     if list(reversed(num_list)) == num_list:
         return True
     else:
         return False
 
-nums = []
-new_nums = []
-answer = []
 n = int(input("Сколько чисел в последовательности: "))
 for _ in range(n):
     n = int(input("Число: "))
