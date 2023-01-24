@@ -1,247 +1,410 @@
 class Water:
-    name = "water"
-    answer = "Получается вода\n"
+    __name = "water"
+
+    def __str__(self):
+        return "Получается вода\n"
+
+    def get_name(self):
+        return self.__name
 
     def __add__(self, other):
-        if other.name == "air":
+        if isinstance(other, Air):
             return Storm
-        elif other.name == "land":
+        elif isinstance(other, Land):
             return Dirt
-        elif other.name == "fire":
+        elif isinstance(other, Fire):
             return Steam
 
 
 class Air:
-    name = "air"
-    answer = "Получается воздух\n"
+    __name = "air"
+
+    def __str__(self):
+        return "Получается воздух\n"
+
+    def get_name(self):
+        return self.__name
 
     def __add__(self, other):
-        if other.name == "water":
+        if isinstance(other, Water):
             return Storm
-        elif other.name == "land":
+        elif isinstance(other, Land):
             return Dust
-        elif other.name == "fire":
+        elif isinstance(other, Fire):
             return Zipp
 
 
 class Land:
-    name = "land"
-    answer = "Получается земля\n"
+    __name = "land"
+
+    def __str__(self):
+        return "Получается земля\n"
+
+    def get_name(self):
+        return self.__name
 
     def __add__(self, other):
-        if other.name == "water":
+        if isinstance(other, Water):
             return Dirt
-        elif other.name == "air":
+        elif isinstance(other, Air):
             return Dust
-        elif other.name == "fire":
+        elif isinstance(other, Fire):
             return Lava
 
 
 class Fire:
-    name = "fire"
-    answer = "Получается огонь\n"
+    __name = "fire"
+
+    def __str__(self):
+        return "Получается огонь\n"
+
+    def get_name(self):
+        return self.__name
 
     def __add__(self, other):
-        if other.name == "water":
+        if isinstance(other, Water):
             return Steam
-        elif other.name == "air":
+        elif isinstance(other, Air):
             return Zipp
-        elif other.name == "land":
+        elif isinstance(other, Land):
             return Lava
 
 
 class Zipp:
-    answer = "Поулчается молния!\n"
-    name = "zipp"
+    __name = "zipp"
+
+    def __str__(self):
+        return "Поулчается молния!\n"
+
+    def get_name(self):
+        return self.__name
 
     def __add__(self, other):
-        if other.name == "water":
+        if isinstance(other, Water):
             return Spark
-        elif other.name == "air":
+        elif isinstance(other, Air):
             return Thunder
-        elif other.name == "land":
+        elif isinstance(other, Land):
             return Earthquake
-        elif other.name == "fire":
+        elif isinstance(other, Fire):
             return Flash
 
 
 class Spark:
-    name = "spark"
-    answer = "Получается искра\n"
+    __name = "spark"
+
+    def __str__(self):
+        return "Получается искра\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Thunder:
-    name = "thunder"
-    answer = "Получается гром\n"
+    __name = "thunder"
+
+    def __str__(self):
+        return "Получается гром\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Earthquake:
-    name = "earthquake"
-    answer = "Получается землетрясение\n"
+    __name = "earthquake"
+
+    def __str__(self):
+        return "Получается землетрясение\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Flash:
-    name = "flash"
-    answer = "Получается вспышка"
+    __name = "flash"
+
+    def __str__(self):
+        return "Получается вспышка"
+
+    def get_name(self):
+        return self.__name
 
 
 class Lava:
-    answer = "Поулчается лава!\n"
-    name = "lava"
+    __name = "lava"
+
+    def __str__(self):
+        return "Поулчается лава!\n"
+
+    def get_name(self):
+        return self.__name
 
     def __add__(self, other):
         if other.name == "water":
             return Smoke
-        elif other.name == "air":
+        elif isinstance(other, Air):
             return FireRain
-        elif other.name == "land":
+        elif isinstance(other, Land):
             return Rock
-        elif other.name == "fire":
+        elif isinstance(other, Fire):
             return Plasma
 
 
 class Smoke:
-    answer = "Поулчается дым!\n"
-    name = "smoke"
+    __name = "smoke"
+
+    def __str__(self):
+        return "Поулчается дым!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class FireRain:
-    answer = "Поулчается огненный дождь!\n"
-    name = "firerain"
+    __name = "firerain"
+
+    def __str__(self):
+        return "Поулчается огненный дождь!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Rock:
-    answer = "Поулчается камень!\n"
-    name = "rock"
+    __name = "rock"
+
+    def __str__(self):
+        return "Поулчается камень!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Plasma:
-    answer = "Поулчается плазма!\n"
-    name = "plasma"
+    __name = "plasma"
+
+    def __str__(self):
+        return "Поулчается плазма!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Dust:
-    answer = "Поулчается пыль!\n"
-    name = "dust"
+    __name = "dust"
+
+    def __str__(self):
+        return "Поулчается пыль!\n"
+
+    def get_name(self):
+        return self.__name
 
     def __add__(self, other):
-        if other.name == "water":
+        if isinstance(other, Water):
             return Dirt
-        elif other.name == "air":
+        elif isinstance(other, Air):
             return SandStorm
-        elif other.name == "land":
+        elif isinstance(other, Land):
             return Sand
-        elif other.name == "fire":
+        elif isinstance(other, Fire):
             return Burn
 
 
 class SandStorm:
-    answer = "Поулчается песчаный шторм!\n"
-    name = "sandstorm"
+    __name = "sandstorm"
+
+    def __str__(self):
+        return "Поулчается песчаный шторм!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Sand:
-    answer = "Поулчается песок!\n"
-    name = "sand"
+    __name = "sand"
+
+    def __str__(self):
+        return "Поулчается песок!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Burn:
-    answer = "Поулчается гарь!\n"
-    name = "burn"
+    __name = "burn"
+
+    def __str__(self):
+        return "Поулчается гарь!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Storm:
-    answer = "Поулчается шторм!\n"
-    name = "storm"
+    __name = "storm"
+
+    def __str__(self):
+        return "Поулчается шторм!\n"
+
+    def get_name(self):
+        return self.__name
 
     def __add__(self, other):
-        if other.name == "water":
+        if isinstance(other, Water):
             return Tsunami
-        elif other.name == "air":
+        elif isinstance(other, Air):
             return Hurricane
-        elif other.name == "land":
+        elif isinstance(other, Land):
             return Drift
-        elif other.name == "fire":
+        elif isinstance(other, Fire):
             return FireStorm
 
 
 class FireStorm:
-    answer = "Поулчается огненный шторм!\n"
-    name = "fireStorm"
+    __name = "fireStorm"
+
+    def __str__(self):
+        return "Поулчается огненный шторм!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Drift:
-    answer = "Поулчается материковый дрейф!\n"
-    name = "drift"
+    __name = "drift"
+
+    def __str__(self):
+        return "Поулчается материковый дрейф!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Hurricane:
-    answer = "Поулчается ураган!\n"
-    name = "hurricane"
+    __name = "hurricane"
+
+    def __str__(self):
+        return "Поулчается ураган!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Tsunami:
-    answer = "Поулчается цунами!\n"
-    name = "tsunami"
+    __name = "tsunami"
+
+    def __str__(self):
+        return "Поулчается цунами!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Dirt:
-    answer = "Поулчается грязь!\n"
-    name = "dirt"
+    __name = "dirt"
+
+    def __str__(self):
+        return "Поулчается грязь!\n"
+
+    def get_name(self):
+        return self.__name
 
     def __add__(self, other):
-        if other.name == "water":
+        if isinstance(other, Water):
             return Swamp
-        elif other.name == "air":
+        elif isinstance(other, Air):
             return Clay
-        elif other.name == "land":
+        elif isinstance(other, Land):
             return Mount
-        elif other.name == "fire":
+        elif isinstance(other, Fire):
             return Vulcan
 
+
 class Swamp:
-    answer = "Поулчается болото!\n"
-    name = "swamp"
+    __name = "swamp"
+
+    def __str__(self):
+        return "Поулчается болото!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Clay:
-    answer = "Поулчается глина!\n"
-    name = "clay"
+    __name = "clay"
+
+    def __str__(self):
+        return "Поулчается глина!\n"
+
+    def get_name(self):
+        return self.__name
+
 
 class Mount:
-    answer = "Поулчается гора!\n"
-    name = "mount"
+    __name = "mount"
+
+    def __str__(self):
+        return "Поулчается гора!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Vulcan:
-    answer = "Поулчается вулкан!\n"
-    name = "vulcan"
+    __name = "vulcan"
+
+    def __str__(self):
+        return "Поулчается вулкан!\n"
+
+    def get_name(self):
+        return self.__name
+
 
 class Steam:
-    answer = "Поулчается пар!\n"
-    name = "steam"
+    __name = "steam"
+
+    def __str__(self):
+        return "Поулчается пар!\n"
+
+    def get_name(self):
+        return self.__name
 
     def __add__(self, other):
-        if other.name == "water":
+        if isinstance(other, Water):
             return Condensate
-        elif other.name == "air":
+        elif isinstance(other, Air):
             return Rain
-        elif other.name == "land":
+        elif isinstance(other, Land):
             return Dew
-        elif other.name == "fire":
+        elif isinstance(other, Fire):
             return Water
 
 
 class Condensate:
-    answer = "Поулчается конденсат!\n"
-    name = "condensate"
+    __name = "condensate"
+
+    def __str__(self):
+        return "Поулчается конденсат!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Rain:
-    answer = "Поулчается дождь!\n"
-    name = "rain"
+    __name = "rain"
+
+    def __str__(self):
+        return "Поулчается дождь!\n"
+
+    def get_name(self):
+        return self.__name
 
 
 class Dew:
-    answer = "Поулчается роса!\n"
-    name = "dew"
+    __name = "dew"
+
+    def __str__(self):
+        return "Поулчается роса!\n"
+
+    def get_name(self):
+        return self.__name
