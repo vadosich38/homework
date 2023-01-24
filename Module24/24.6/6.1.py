@@ -1,16 +1,15 @@
-import resurces6
-
-my_water = resurces6.Water()
-my_land = resurces6.Land()
-my_fire = resurces6.Fire()
-my_air = resurces6.Air()
+import resurces61
 
 
 def res_print(data):
     for i_num, i_elem in data.items():
-        name = i_elem.get_name()
-        print("{}: {}".format(i_num, name))
+        print("{}: {}".format(i_num, i_elem.name))
 
+
+my_water = resurces61.Water()
+my_land = resurces61.Land()
+my_fire = resurces61.Fire()
+my_air = resurces61.Air()
 
 res_dict = {1: my_water, 2: my_land, 3: my_fire, 4: my_air}
 
@@ -23,11 +22,8 @@ while True:
     elem2 = answer[-1]
     try:
         new_elem = res_dict[int(elem1)] + res_dict[int(elem2)]
-        print(new_elem())
-        if new_elem().get_name() not in res_dict.values():
-            res_dict[len(res_dict) + 1] = new_elem()
+        print(new_elem.answer)
+        if new_elem not in res_dict.values():
+            res_dict[len(res_dict) + 1] = new_elem
     except Exception as a:
-        print("Возникла ошибка {}".format(a))
-
-
-
+        print("Сложение выполнить невозможно так как возникла ошибка {}".format(a))

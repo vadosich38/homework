@@ -3,6 +3,7 @@ import os
 my_path = input("Введите путь каталога: ")
 counter_dict = {"size": 0, "files": 0, "folders": 0}
 
+
 def grabber(directory, counter):
     for i_elem in os.listdir(directory):
         new_path = os.path.abspath(os.path.join(directory, i_elem))
