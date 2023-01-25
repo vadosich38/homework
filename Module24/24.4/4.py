@@ -17,3 +17,4 @@ man2 = Peoples("Olya", 20)
 print("Всего людей: ", Peoples.peoples_counter)
 man1.info()
 man2.info()
+
