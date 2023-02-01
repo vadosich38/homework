@@ -10,6 +10,9 @@ class Man:
         self.set_name(name)
         self.set_age(age)
 
+    def get_counter(self):
+        return self.__counter
+
     def __str__(self):
         return "Человеку по имени {} {} лет".format(self.__name, self.__age)
 
@@ -57,5 +60,3 @@ vlad._Man__age = 10
 vlad._Man__name = "Памилка"
 print(vlad)
 print("-"*90)
-
-
