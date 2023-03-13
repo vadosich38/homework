@@ -1,0 +1,1 @@
+2023-03-07 09:17:15.621632: При выполнении функции my_func возникла ошибка: unsupported operand type(s) for /: 'int' and 'str'
