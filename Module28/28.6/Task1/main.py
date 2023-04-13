@@ -18,12 +18,20 @@ class Transport(ABC):
         Конструктор транспорта.
         :param color: передает цвет транспорта
         """
-        self.color = color
+        self.__color = color
         self.__speed = 0
         self.__move_status = False
 
     def __str__(self) -> str:
-        return "\nЦвет транспорта: {}".format(self.color)
+        return "\nЦвет транспорта: {}".format(self.__color)
+
+    @property
+    def color(self):
+        return self.__color
+
+    @color.setter
+    def color(self, color):
+        self.__color = color
 
     @property
     def speed(self) -> int:
@@ -97,7 +105,7 @@ my_auto.stop()
 print(my_auto)
 print("-"*90)
 
-my_boat = Boat(color="Green")
+my_boat = Boat(color="Lila")
 print(my_boat)
 my_boat.color = "Blue"
 my_boat.signal()
