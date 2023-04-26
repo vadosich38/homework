@@ -76,8 +76,8 @@ for figure in [Rectangle(x=1, y=0, length=10, width=22), Rectangle(x=0, y=22, le
     print(figure)
     print("-"*90)
 
-    new_length = figure.length * 2
-    new_width = figure.width * 2
-    figure.resize(new_length=new_length, new_width=new_width)
+    new_length1 = figure.length * 2
+    new_width1 = figure.width * 2
+    figure.resize(new_length=new_length1, new_width=new_width1)
     print(figure)
     print("-"*90)
