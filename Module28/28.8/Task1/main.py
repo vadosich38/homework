@@ -1,6 +1,6 @@
 from abc import ABC
 import os
-from typing import IO, Any
+from typing import IO
 
 
 class File(ABC):
@@ -18,7 +18,7 @@ class File(ABC):
         self.__file_name = file_name
         self.__reg = reg
         self.__coding = coding
-        print("Открытие файла(инициализация)")
+        print("Инициализация")
 
     def __enter__(self) -> IO[str]:
         """
@@ -26,6 +26,8 @@ class File(ABC):
         Если файл существует, просто открываем переданый файл и возвращаем его.
         :return: файловый объект
         """
+
+        print("Открытие файла")
         if not os.path.exists(self.__file_name):
             self.__my_file = open(file=self.__file_name, mode="x", encoding=self.__coding)
         else:
@@ -43,10 +45,12 @@ class File(ABC):
         :param exc_tb: след ошибки
         :return:
         """
+        print("Закрытие файла")
+
         self.__my_file.close()
 
         #проверяю закрыт ли файл
-        self.__my_file.closed
+        print("Файл закрыт: {}".format(self.__my_file.closed))
 
         if exc_type == OSError:
             return True
