@@ -8,6 +8,7 @@ def decorator(func: Callable) -> Callable:
 
     return wrapped_func
 
+
 @decorator
 def greeting(name: str) -> None:
     print('Привет, {name}!'.format(name=name))

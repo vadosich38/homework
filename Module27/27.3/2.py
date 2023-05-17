@@ -14,6 +14,7 @@ def timer(func: Callable) -> Callable:
 
     return wrapper
 
+
 @timer
 def my_func1(num: int) -> int:
     summ = 0
