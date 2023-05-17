@@ -11,6 +11,7 @@ def decorator(func: Callable) -> Callable:
 
     return wrapped_func
 
+
 @decorator
 def greeting(name: str) -> str:
     my_str = "Привет " + name + "!"
