@@ -16,30 +16,30 @@ def logging(func: Callable) -> Callable:
         class_name = func.__qualname__.split(".")
         print("-"*90, "\nВремя: {} \t Выполяется функция: {} \t Класс метода: {} \t Аргументы метода: {} "
                       "\t Именованные аргументы метода: {} \nДокументация метода: {}\n".
-              format(datetime.utcnow(), func.__name__, class_name[0], args[0:], kwargs, func.__doc__))
+              format(datetime.utcnow(), func.__name__, class_name[0], args[1:], kwargs, func.__doc__))
 
     return wrapper
 
 
-def for_all_methods(cls: Callable) -> Callable:
+def for_all_methods(decorator: Callable) -> Callable:
     """
     Декоратор, оборачивающий все методы класса в декоратор логирования
-    :param cls: класс, методы, которого перебираются и декорируются
+    :param decorator: декоратор, в который будут обернуты методы класса
     :return: при объявлении экземпляра класса срабатывает декоратор и возвращает экз. класса с обернутыми методами
     """
-    @functools.wraps(cls)
-    def wrapper():
+    @functools.wraps(decorator)
+    def decorate(cls):
         for i_method in dir(cls):
             if i_method.startswith("__") is False:
                 current_method = getattr(cls, i_method)
-                logged_method = logging(current_method)
+                logged_method = decorator(current_method)
                 setattr(cls, i_method, logged_method)
         return cls
 
-    return wrapper
+    return decorate
 
 
-@for_all_methods
+@for_all_methods(decorator=logging)
 class MyClass:
     """
     Класс-тест, создан для примера.
