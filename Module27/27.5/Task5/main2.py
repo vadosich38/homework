@@ -2,17 +2,16 @@ from typing import Callable
 import functools
 
 
-def counter(func: Callable, *args, **kwargs) -> Callable:
+def counter(func: Callable) -> Callable:
     """
     Декоратор. Создает и инкременирует счетчик вызова функции в обертке
     :param func: функция в обертке
-    :param args: аргументы позиционные
-    :param kwargs: именованные аргументы
     :return: результат выполнения функции в обертке
     """
     @functools.wraps(wrapped=func)
-    def wrapper() -> Callable:
+    def wrapper(*args, **kwargs) -> Callable:
         wrapper.count += 1
+        print(func.__name__, "was called", wrapper.count, "times.")
         return func(*args, **kwargs)
 
     wrapper.count = 0
@@ -32,10 +31,10 @@ my_func()
 my_func()
 my_func()
 
-print(my_func.__name__, "was called", my_func.count, "times.")
+#print(my_func.__name__, "was called", my_func.count, "times.")
 
 my_func()
 my_func()
 my_func()
 
-print(my_func.__name__, "was called", my_func.count, "times.")
+#print(my_func.__name__, "was called", my_func.count, "times.")
