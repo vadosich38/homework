@@ -1,10 +1,10 @@
 from typing import Callable
 
 
-def decorator_with_args_for_any_decorator(func: Callable) -> Callable:
+def decorator_with_args_for_any_decorator(decorator: Callable) -> Callable:
     def wrapper(*args, **kwargs):
         print("Переданные арги и кварги в декоратор: {} {}".format(args, kwargs))
-        return func
+        return decorator
 
     return wrapper
 
