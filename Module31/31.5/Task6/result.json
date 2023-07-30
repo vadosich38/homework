@@ -1,0 +1,13 @@
+{
+    "services": [
+        {
+            "id": 22222225,
+            "title": "Стрижка",
+            "cost": 1500,
+            "cost_per_unit": 1500,
+            "first_cost": 1500,
+            "amount": 1
+        }
+    ],
+    "datetime": "2022-01-25T13:00:00+03:00"
+}
